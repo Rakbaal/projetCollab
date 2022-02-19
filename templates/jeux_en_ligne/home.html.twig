@@ -2,5 +2,26 @@
 
 
 {% block body %}
-    <h1>{{content}}</h1>
+    <h1>Bienvenue!</h1>
+    <p>Ce site permet aux différents utilisateurs de donner leur avis sur des jeux et leur attribuer une note.</p>
+    {% if (logged) %}
+        <p>Vous êtes connecté(e)! Vous pouvez désormais donner votre avis sur des jeux!</p>
+    {% else %}
+        <p>En n'étant pas connecté(e) vous pourrez consulter la liste de jeux, mais ne pourrez pas laisser de note à de nouveaux jeux.</p>
+        </br>
+        <h4>Se connecter:</h4>
+        <form>
+            <table>
+                <tr>
+                    <td>Nom d'utilisateur: </td>
+                    <td><input type="text" id="uName"></td>
+                </tr>
+                <tr>
+                    <td>Mot de passe:</td>
+                    <td><input type="password" id="uPass"></td>
+                </tr>
+            </table>
+        </form>
+        <p class="subtext">Pas encore inscrit(e)? C'est par <a href="/inscription">ici</a>! </p>
+    {% endif %}
 {% endblock %}

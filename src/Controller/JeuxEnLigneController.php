@@ -12,14 +12,15 @@ class JeuxEnLigneController extends AbstractController
     public function index(): Response
     {
         return $this->render('jeux_en_ligne/index.html.twig', [
-            'controller_name' => 'JeuxEnLigneController',
+            'controller_name' => 'JeuxEnLigneController'
         ]);
     }
 
     #[Route('/')]
     public function home() {
+        $logged = false;
         return $this->render('jeux_en_ligne/home.html.twig', [
-            'content' => "Bienvenue!"
+            'logged' =>  $logged
         ]);
     }
 
